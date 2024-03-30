@@ -23,7 +23,7 @@ public class App {
         // Deixando o programa rodar e armazenar novos Objs para fins de consulta
         while (!resposta.equals("sair")) {
             System.out.println("\n~~ Para criar nova conta: Digite 'criar' ");
-            System.out.println("~~ Para entrar em conta existe: Digite 'entrar' ");
+            System.out.println("~~ Para entrar em conta existente: Digite 'entrar' ");
             System.out.println("~~ Para sair do programa: Digite 'sair' ");
             resposta = leitor.nextLine().toLowerCase();
 
@@ -95,11 +95,10 @@ public class App {
                                 break;
                         }
                     }
-                    //usado Else if só pra desaparecer a mensagem de erro onde a variavel não é utilizada.
-                    else if (contaExistente) {
-                        System.out.println("\n~~~ Conta inexistente em sistema ~~~");
-                    }
                 } 
+                if (contaExistente == false) {
+                    System.out.println("\n~~~ Conta inexistente em sistema ~~~");
+                }
             }
         }
         System.out.println("~~~ Encerrando programa ~~~");
